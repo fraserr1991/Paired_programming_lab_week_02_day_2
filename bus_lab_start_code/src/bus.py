@@ -3,7 +3,7 @@ class Bus:
         self.route_number = route_number
         self.destination = destination
         self.passenger = []
-
+    
     def drive(self):
         return "Brum brum"
 

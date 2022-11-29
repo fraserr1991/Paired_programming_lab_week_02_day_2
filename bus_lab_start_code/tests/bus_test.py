@@ -37,10 +37,14 @@ class TestBus(unittest.TestCase):
         self.assertEqual(0, self.bus.passenger_count())
 
     def test_can_pick_up_passenger_from_bus_stop(self):
+        #pass person information to the Person class and make 2 instances
         person_1 = Person("Guido van Rossum", 64)
         person_2 = Person("Carol Willing", 50)
+        #pass the bus stop name, waverly station to the BusStop class
         bus_stop = BusStop("Waverly Station")
+        #make a method add_to_queue that puts person 1 and 2 in a queue
         bus_stop.add_to_queue(person_1)
         bus_stop.add_to_queue(person_2)
+        #pick the passengers up at the bus stop
         self.bus.pick_up_from_stop(bus_stop)
         self.assertEqual(2, self.bus.passenger_count())
